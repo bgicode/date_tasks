@@ -10,8 +10,7 @@ $period = new DatePeriod(
 );
 
 foreach ($period as $day) {
-        if ($day->format('D') == 'Mon') {
-            echo $day->format("D, d M y")."<br />";
-        }
+    if ($day->format('D') == 'Mon') {
+        echo $day->format("D, d M y") . "<br />";
     }
-
+}

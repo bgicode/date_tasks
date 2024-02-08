@@ -1,5 +1,5 @@
 <?php
-$schedule = [
+$arSchedule = [
     [
         'weekday' => 'Monday',
         'openTime' => '9:00',
@@ -36,16 +36,18 @@ $schedule = [
         'closeTime' => '18:00',
     ],
 ];
+
 $date = '10.10.2024';
 $time = '19:00';
-$visitDate = new DateTime($date.' '.$time);
-foreach ($schedule as $weekday) {
-    if ($weekday['weekday'] == $visitDate->format('l')){
-        $openTime = new DateTime($date.' '.$weekday['openTime']);
-        $closeTime = new DateTime($date.' '.$weekday['closeTime']);
-        if ($visitDate > $openTime and $visitDate < $closeTime ){
-            $dif = ($closeTime->getTimestamp()-$visitDate->getTimestamp())/60;
-            echo 'магазин закроется через: '.$dif.' минут';
+$visitDate = new DateTime($date . ' ' . $time);
+
+foreach ($arSchedule as $weekday) {
+    if ($weekday['weekday'] == $visitDate->format('l')) {
+        $openTime = new DateTime($date . ' ' . $weekday['openTime']);
+        $closeTime = new DateTime($date . ' ' . $weekday['closeTime']);
+        if ($visitDate > $openTime and $visitDate < $closeTime) {
+            $dif = ($closeTime->getTimestamp() - $visitDate->getTimestamp()) / 60;
+            echo 'магазин закроется через: ' . $dif . ' минут';
         } else {
             echo 'зыкрыто';
         }
