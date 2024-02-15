@@ -7,11 +7,11 @@ $endDate = new DateTime($dateVar);
 $endDate->modify('+1 month');
 
 while ($date < $endDate) {
-    if ($date->format('N') < 6) {
+    if ($date->format('N') < 7) {
         echo $date->format('d-m-Y') . "</br>";
     } elseif ($date->format('N') == 7) {
         $date->modify('+1 day');
         echo $date->format('d-m-Y') . "</br>"; 
     }
-    $date->modify('+3 days');
+    $date->modify('+4 days');
 }
